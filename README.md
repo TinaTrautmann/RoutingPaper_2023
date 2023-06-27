@@ -1,4 +1,5 @@
 ## These scripts reproduce the analysis and figures from Trautmann et al. 2023, ERC
+ [![DOI](https://zenodo.org/badge/658690923.svg)](https://zenodo.org/badge/latestdoi/658690923)
 
 - they were written and run with MATLAB R2019a
 
