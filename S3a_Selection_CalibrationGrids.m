@@ -5,9 +5,8 @@
 spth = [pwd '/figures/supplement/'];
 if ~exist(spth, 'dir'), mkdir(spth),end
 
-%!!
 % use the wRiver from routed GRUN with eff_vel = 0.5
-globData = load([pthX '/data/GRUNrouted_effVel_0_5.mat']) %wRiver, Qriver, lat, lon, xDays
+globData = load([pwd '/data/input/ancillary/GRUNrouted_wRiver_05.mat']) %wRiver, Qriver, lat, lon, xDays
 
 % calculate average wRiver
 wRiver_avg = mean(globData.wRiver,2);
