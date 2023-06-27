@@ -7,7 +7,6 @@ spth = [pwd '/figures/supplement/'];
 if ~exist(spth, 'dir'), mkdir(spth),end
 
 %% download and save the GRDC data as .nc e.g.
-%!!
 try
     pth_lp = 'M:/data/DataStructureMDI/DATA/Incoming/GRDC/2016/Data/'
 catch
@@ -15,8 +14,7 @@ catch
 end
 
 %% load 0.25 deg spatial data (CaMa)
-%!!
-glob_25     = load([pth 'work_3/sindbad/project/PhDTina/sindbad/data/input/globalBaseline_validCali/lat25_lon25_validCali.mat'], 'lat_25', 'lon_25', 'study_mask_25')
+glob_25     = load([pwd '/data/input/ancillary/CaMa_Flood_up_area_validCali.mat'], 'lat_25', 'lon_25', 'study_mask_25');
 glob_25.idx = find(~isnan(glob_25.study_mask_25));
 
 load('data/input/ancillary/CaMa_Flood_up_area_validCali.mat', 'uparea_cama')
@@ -56,7 +54,7 @@ for nS=1:numel(station_numbers)
     Q_lat = T_all{f_num,'lat'}
     Q_lon = T_all{f_num,'long'}
     
-    ST_area   = T_all{f_num,'area'}; %catchment size in km²
+    ST_area   = T_all{f_num,'area'}; %catchment size in kmÂ²
     ST_name = T_all{f_num,'station'};
     if strcmp(S_name, 'Zambesi')
         ST_name = strsplit(ST_name{1},'(');
